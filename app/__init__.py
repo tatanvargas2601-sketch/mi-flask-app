@@ -21,4 +21,8 @@ def create_app():
         db.session.execute(text("SELECT 1"))
         return {"status": "ok"}, 200
 
+    @app.get("/")
+    def home():
+        return {"message": "Hola desde staging"}
+
     return app
